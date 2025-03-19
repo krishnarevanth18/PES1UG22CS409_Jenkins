@@ -1,30 +1,26 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o gvcd output PES1UG22CS409.cpp'  // Compiling C++ file
+                    sh 'g++ PES1UG22CS409.cpp -o PES1UG22CS409'
                 }
             }
         }
-
         stage('Test') {
             steps {
                 script {
-                    sh './output'  // Running compiled C++ file
+                    sh './PES1UG22CS409'
                 }
             }
         }
-
         stage('Deploy') {
             steps {
-                echo 'Deployment Step '
+                echo 'Deploying Application...'
             }
         }
     }
-
     post {
         failure {
             echo 'Pipeline failed'
