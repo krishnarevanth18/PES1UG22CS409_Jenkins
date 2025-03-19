@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ PES1UG22CS409.cpp -o PES1UG22CS409'
+                    sh 'g++ vdvgwd PES1UG22CS409.cpp -o PES1UG22CS409'
                 }
             }
         }
